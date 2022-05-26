@@ -1,7 +1,9 @@
+using Inceliyo.Persistence.Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,10 +30,20 @@ namespace Inceliyo.WebAPI
         {
 
             services.AddControllers();
+
+            services.AddDbContext<AppDbContext>(conf =>
+            {
+                services.AddDbContext<AppDbContext>(conf =>
+                {
+                    conf.UseSqlite("Data Source=Inceliyo.db");
+                });
+            });
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Inceliyo.WebAPI", Version = "v1" });
             });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

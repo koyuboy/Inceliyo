@@ -13,15 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{CE571EAA-1817-4195-9B97-E4928D5A9779}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inceliyo.Application", "src\Core\Inceliyo.Application\Inceliyo.Application.csproj", "{665D187B-B3E6-46DE-9AD1-64F793FB76D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inceliyo.Application", "src\Core\Inceliyo.Application\Inceliyo.Application.csproj", "{665D187B-B3E6-46DE-9AD1-64F793FB76D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inceliyo.Domain", "src\Core\Inceliyo.Domain\Inceliyo.Domain.csproj", "{1E29D696-6F90-4347-A678-AF6B086E3599}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inceliyo.Domain", "src\Core\Inceliyo.Domain\Inceliyo.Domain.csproj", "{1E29D696-6F90-4347-A678-AF6B086E3599}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inceliyo.Infrastructure", "src\Infrastructure\Inceliyo.Infrastructure\Inceliyo.Infrastructure.csproj", "{AD581244-D1D0-4019-A2FB-30CF55452F19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inceliyo.Infrastructure", "src\Infrastructure\Inceliyo.Infrastructure\Inceliyo.Infrastructure.csproj", "{AD581244-D1D0-4019-A2FB-30CF55452F19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inceliyo.Persistence", "src\Infrastructure\Inceliyo.Persistence\Inceliyo.Persistence.csproj", "{3F14529A-D962-4E2F-A491-DB8C094CA75C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inceliyo.Persistence", "src\Infrastructure\Inceliyo.Persistence\Inceliyo.Persistence.csproj", "{3F14529A-D962-4E2F-A491-DB8C094CA75C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inceliyo.WebAPI", "src\Presentation\Inceliyo.WebAPI\Inceliyo.WebAPI.csproj", "{64B4F9C4-7556-48C9-9AFE-120146C34671}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inceliyo.WebAPI", "src\Presentation\Inceliyo.WebAPI\Inceliyo.WebAPI.csproj", "{64B4F9C4-7556-48C9-9AFE-120146C34671}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "src\Presentation\ConsoleApp2\ConsoleApp2.csproj", "{86D370AF-9FB1-41DB-A858-50FB690165D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{64B4F9C4-7556-48C9-9AFE-120146C34671}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64B4F9C4-7556-48C9-9AFE-120146C34671}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64B4F9C4-7556-48C9-9AFE-120146C34671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D370AF-9FB1-41DB-A858-50FB690165D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D370AF-9FB1-41DB-A858-50FB690165D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D370AF-9FB1-41DB-A858-50FB690165D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D370AF-9FB1-41DB-A858-50FB690165D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{AD581244-D1D0-4019-A2FB-30CF55452F19} = {0902C334-BE55-4C6F-BA9B-9C289A163F9F}
 		{3F14529A-D962-4E2F-A491-DB8C094CA75C} = {0902C334-BE55-4C6F-BA9B-9C289A163F9F}
 		{64B4F9C4-7556-48C9-9AFE-120146C34671} = {CE571EAA-1817-4195-9B97-E4928D5A9779}
+		{86D370AF-9FB1-41DB-A858-50FB690165D5} = {CE571EAA-1817-4195-9B97-E4928D5A9779}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {13E6BC66-2723-413E-936B-8FBEC267F30D}
