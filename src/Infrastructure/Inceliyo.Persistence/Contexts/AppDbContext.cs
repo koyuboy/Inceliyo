@@ -19,7 +19,7 @@ namespace Inceliyo.Persistence.Contexts
         public string DbPath { get;}
         public AppDbContext()
         {
-            string localDirectory = "C:/Users/HUZEYFE/Desktop";
+            string localDirectory = "C:/Users/HUZEYFE/Desktop/Inceliyo.com";
             string dbDirectory = "/Inceliyo/src/Infrastructure/Inceliyo.Persistence/DB/InceliyoSQLite.db";
             DbPath = localDirectory + dbDirectory;
         }
