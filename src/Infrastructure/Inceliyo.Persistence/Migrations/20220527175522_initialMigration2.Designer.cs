@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Inceliyo.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220526191617_initialMigration")]
-    partial class initialMigration
+    [Migration("20220527175522_initialMigration2")]
+    partial class initialMigration2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -62,7 +62,7 @@ namespace Inceliyo.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Comment");
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.CommentAction", b =>
@@ -84,7 +84,7 @@ namespace Inceliyo.Persistence.Migrations
 
                     b.HasIndex("CommentId");
 
-                    b.ToTable("CommentAction");
+                    b.ToTable("CommentActions");
                 });
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.Market", b =>
@@ -101,7 +101,7 @@ namespace Inceliyo.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Market");
+                    b.ToTable("Markets");
                 });
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.Review", b =>
@@ -143,7 +143,7 @@ namespace Inceliyo.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Review");
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.ReviewAction", b =>
@@ -165,7 +165,7 @@ namespace Inceliyo.Persistence.Migrations
 
                     b.HasIndex("ReviewId");
 
-                    b.ToTable("ReviewAction");
+                    b.ToTable("ReviewActions");
                 });
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.ReviewMarketLink", b =>
@@ -189,7 +189,7 @@ namespace Inceliyo.Persistence.Migrations
 
                     b.HasIndex("ReviewId");
 
-                    b.ToTable("ReviewMarketLink");
+                    b.ToTable("ReviewMarketLinks");
                 });
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.ReviewMedia", b =>
@@ -217,7 +217,7 @@ namespace Inceliyo.Persistence.Migrations
 
                     b.HasIndex("ReviewId");
 
-                    b.ToTable("ReviewMedia");
+                    b.ToTable("ReviewMedias");
                 });
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.SavedReview", b =>
@@ -241,7 +241,7 @@ namespace Inceliyo.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("SavedReview");
+                    b.ToTable("SavedReviews");
                 });
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.SocialMedia", b =>
@@ -258,7 +258,7 @@ namespace Inceliyo.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SocialMedia");
+                    b.ToTable("SocialMedias");
                 });
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.SocialMediaLink", b =>
@@ -282,7 +282,7 @@ namespace Inceliyo.Persistence.Migrations
 
                     b.HasIndex("UserProfileId");
 
-                    b.ToTable("SocialMediaLink");
+                    b.ToTable("SocialMediaLinks");
                 });
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.User", b =>
@@ -317,7 +317,7 @@ namespace Inceliyo.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.UserFollower", b =>
@@ -342,7 +342,7 @@ namespace Inceliyo.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserFollower");
+                    b.ToTable("UserFollowers");
                 });
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.UserProfile", b =>
@@ -380,7 +380,7 @@ namespace Inceliyo.Persistence.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("UserProfile");
+                    b.ToTable("UserProfiles");
                 });
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.Comment", b =>

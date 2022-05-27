@@ -11,12 +11,17 @@ namespace Inceliyo.Persistence.Contexts
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        {
-        }
+        //public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        //{
+        //}
 
+
+        public string DbPath { get;}
         public AppDbContext()
         {
+            string localDirectory = "C:/Users/HUZEYFE/Desktop";
+            string dbDirectory = "/Inceliyo/src/Infrastructure/Inceliyo.Persistence/DB/InceliyoSQLite.db";
+            DbPath = localDirectory + dbDirectory;
         }
 
         public DbSet<Category> Categories { get; set; }
@@ -38,10 +43,14 @@ namespace Inceliyo.Persistence.Contexts
 
 protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlite("Data Source=Inceliyo.db");
-            }
+            optionsBuilder.UseSqlite($"Data Source={DbPath}");
+            //if (!optionsBuilder.IsConfigured)
+            //{
+            //    //optionsBuilder.UseSqlite($"Data Source=Inceliyo.db");
+            //    optionsBuilder.UseSqlite($"Data Source=C:/Users/HUZEYFE/Desktop/Inceliyo/src/Infrastructure/Inceliyo.Persistence/InceliyoSQLite.db");
+
+            //    //optionsBuilder.UseSqlite("DataSource=./src/Infrastructure/Inceliyo.Persistence/DB/Inceliyo.db");
+            //}
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

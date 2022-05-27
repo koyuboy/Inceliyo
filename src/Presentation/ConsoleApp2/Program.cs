@@ -13,17 +13,14 @@ namespace ConsoleApp2
         {
             AppDbContext context = new AppDbContext();
 
-            context.Database.EnsureCreated();
 
-
-
-            context.Categories.AddAsync(new Category()
+            await context.Categories.AddAsync(new Category()
             {
-                Name = "Category 4",
+                Name = "Category " + DateTime.Now.ToString("dd/HH:mm"),
                 ParentId = Guid.NewGuid()
             });
 
-            context.SaveChangesAsync();
+            await context.SaveChangesAsync();
 
             var categories = await context.Categories.ToListAsync();
             
@@ -33,10 +30,6 @@ namespace ConsoleApp2
                 Console.WriteLine(category.Name);
                 Console.WriteLine(category.ParentId);
             }
-
-            
-
-
 
 
             Console.ReadLine();

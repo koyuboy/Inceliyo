@@ -21,7 +21,7 @@ namespace Inceliyo.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Market",
+                name: "Markets",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -30,11 +30,11 @@ namespace Inceliyo.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Market", x => x.Id);
+                    table.PrimaryKey("PK_Markets", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "SocialMedia",
+                name: "SocialMedias",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -43,11 +43,11 @@ namespace Inceliyo.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SocialMedia", x => x.Id);
+                    table.PrimaryKey("PK_SocialMedias", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "User",
+                name: "Users",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -62,11 +62,11 @@ namespace Inceliyo.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User", x => x.Id);
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Review",
+                name: "Reviews",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -82,23 +82,23 @@ namespace Inceliyo.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Review", x => x.Id);
+                    table.PrimaryKey("PK_Reviews", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Review_Categories_CategoryId",
+                        name: "FK_Reviews_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Review_User_UserId",
+                        name: "FK_Reviews_Users_UserId",
                         column: x => x.UserId,
-                        principalTable: "User",
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserFollower",
+                name: "UserFollowers",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -109,17 +109,17 @@ namespace Inceliyo.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserFollower", x => x.Id);
+                    table.PrimaryKey("PK_UserFollowers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserFollower_User_UserId",
+                        name: "FK_UserFollowers_Users_UserId",
                         column: x => x.UserId,
-                        principalTable: "User",
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserProfile",
+                name: "UserProfiles",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -134,17 +134,17 @@ namespace Inceliyo.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserProfile", x => x.Id);
+                    table.PrimaryKey("PK_UserProfiles", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserProfile_User_UserId",
+                        name: "FK_UserProfiles_Users_UserId",
                         column: x => x.UserId,
-                        principalTable: "User",
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Comment",
+                name: "Comments",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -156,23 +156,23 @@ namespace Inceliyo.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Comment", x => x.Id);
+                    table.PrimaryKey("PK_Comments", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Comment_Review_ReviewId",
+                        name: "FK_Comments_Reviews_ReviewId",
                         column: x => x.ReviewId,
-                        principalTable: "Review",
+                        principalTable: "Reviews",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Comment_User_UserId",
+                        name: "FK_Comments_Users_UserId",
                         column: x => x.UserId,
-                        principalTable: "User",
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ReviewAction",
+                name: "ReviewActions",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -182,17 +182,17 @@ namespace Inceliyo.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReviewAction", x => x.Id);
+                    table.PrimaryKey("PK_ReviewActions", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ReviewAction_Review_ReviewId",
+                        name: "FK_ReviewActions_Reviews_ReviewId",
                         column: x => x.ReviewId,
-                        principalTable: "Review",
+                        principalTable: "Reviews",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ReviewMarketLink",
+                name: "ReviewMarketLinks",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -202,23 +202,23 @@ namespace Inceliyo.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReviewMarketLink", x => x.Id);
+                    table.PrimaryKey("PK_ReviewMarketLinks", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ReviewMarketLink_Market_MarketId",
+                        name: "FK_ReviewMarketLinks_Markets_MarketId",
                         column: x => x.MarketId,
-                        principalTable: "Market",
+                        principalTable: "Markets",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ReviewMarketLink_Review_ReviewId",
+                        name: "FK_ReviewMarketLinks_Reviews_ReviewId",
                         column: x => x.ReviewId,
-                        principalTable: "Review",
+                        principalTable: "Reviews",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ReviewMedia",
+                name: "ReviewMedias",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -230,17 +230,17 @@ namespace Inceliyo.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReviewMedia", x => x.Id);
+                    table.PrimaryKey("PK_ReviewMedias", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ReviewMedia_Review_ReviewId",
+                        name: "FK_ReviewMedias_Reviews_ReviewId",
                         column: x => x.ReviewId,
-                        principalTable: "Review",
+                        principalTable: "Reviews",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "SavedReview",
+                name: "SavedReviews",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -250,23 +250,23 @@ namespace Inceliyo.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SavedReview", x => x.Id);
+                    table.PrimaryKey("PK_SavedReviews", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SavedReview_Review_ReviewId",
+                        name: "FK_SavedReviews_Reviews_ReviewId",
                         column: x => x.ReviewId,
-                        principalTable: "Review",
+                        principalTable: "Reviews",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_SavedReview_User_UserId",
+                        name: "FK_SavedReviews_Users_UserId",
                         column: x => x.UserId,
-                        principalTable: "User",
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "SocialMediaLink",
+                name: "SocialMediaLinks",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -276,23 +276,23 @@ namespace Inceliyo.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SocialMediaLink", x => x.Id);
+                    table.PrimaryKey("PK_SocialMediaLinks", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SocialMediaLink_SocialMedia_SocialMediaId",
+                        name: "FK_SocialMediaLinks_SocialMedias_SocialMediaId",
                         column: x => x.SocialMediaId,
-                        principalTable: "SocialMedia",
+                        principalTable: "SocialMedias",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_SocialMediaLink_UserProfile_UserProfileId",
+                        name: "FK_SocialMediaLinks_UserProfiles_UserProfileId",
                         column: x => x.UserProfileId,
-                        principalTable: "UserProfile",
+                        principalTable: "UserProfiles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "CommentAction",
+                name: "CommentActions",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -302,88 +302,88 @@ namespace Inceliyo.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CommentAction", x => x.Id);
+                    table.PrimaryKey("PK_CommentActions", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CommentAction_Comment_CommentId",
+                        name: "FK_CommentActions_Comments_CommentId",
                         column: x => x.CommentId,
-                        principalTable: "Comment",
+                        principalTable: "Comments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comment_ReviewId",
-                table: "Comment",
-                column: "ReviewId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Comment_UserId",
-                table: "Comment",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CommentAction_CommentId",
-                table: "CommentAction",
+                name: "IX_CommentActions_CommentId",
+                table: "CommentActions",
                 column: "CommentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Review_CategoryId",
-                table: "Review",
-                column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Review_UserId",
-                table: "Review",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ReviewAction_ReviewId",
-                table: "ReviewAction",
+                name: "IX_Comments_ReviewId",
+                table: "Comments",
                 column: "ReviewId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ReviewMarketLink_MarketId",
-                table: "ReviewMarketLink",
+                name: "IX_Comments_UserId",
+                table: "Comments",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ReviewActions_ReviewId",
+                table: "ReviewActions",
+                column: "ReviewId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ReviewMarketLinks_MarketId",
+                table: "ReviewMarketLinks",
                 column: "MarketId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ReviewMarketLink_ReviewId",
-                table: "ReviewMarketLink",
+                name: "IX_ReviewMarketLinks_ReviewId",
+                table: "ReviewMarketLinks",
                 column: "ReviewId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ReviewMedia_ReviewId",
-                table: "ReviewMedia",
+                name: "IX_ReviewMedias_ReviewId",
+                table: "ReviewMedias",
                 column: "ReviewId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SavedReview_ReviewId",
-                table: "SavedReview",
-                column: "ReviewId");
+                name: "IX_Reviews_CategoryId",
+                table: "Reviews",
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SavedReview_UserId",
-                table: "SavedReview",
+                name: "IX_Reviews_UserId",
+                table: "Reviews",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SocialMediaLink_SocialMediaId",
-                table: "SocialMediaLink",
+                name: "IX_SavedReviews_ReviewId",
+                table: "SavedReviews",
+                column: "ReviewId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SavedReviews_UserId",
+                table: "SavedReviews",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SocialMediaLinks_SocialMediaId",
+                table: "SocialMediaLinks",
                 column: "SocialMediaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SocialMediaLink_UserProfileId",
-                table: "SocialMediaLink",
+                name: "IX_SocialMediaLinks_UserProfileId",
+                table: "SocialMediaLinks",
                 column: "UserProfileId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserFollower_UserId",
-                table: "UserFollower",
+                name: "IX_UserFollowers_UserId",
+                table: "UserFollowers",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserProfile_UserId",
-                table: "UserProfile",
+                name: "IX_UserProfiles_UserId",
+                table: "UserProfiles",
                 column: "UserId",
                 unique: true);
         }
@@ -391,46 +391,46 @@ namespace Inceliyo.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CommentAction");
+                name: "CommentActions");
 
             migrationBuilder.DropTable(
-                name: "ReviewAction");
+                name: "ReviewActions");
 
             migrationBuilder.DropTable(
-                name: "ReviewMarketLink");
+                name: "ReviewMarketLinks");
 
             migrationBuilder.DropTable(
-                name: "ReviewMedia");
+                name: "ReviewMedias");
 
             migrationBuilder.DropTable(
-                name: "SavedReview");
+                name: "SavedReviews");
 
             migrationBuilder.DropTable(
-                name: "SocialMediaLink");
+                name: "SocialMediaLinks");
 
             migrationBuilder.DropTable(
-                name: "UserFollower");
+                name: "UserFollowers");
 
             migrationBuilder.DropTable(
-                name: "Comment");
+                name: "Comments");
 
             migrationBuilder.DropTable(
-                name: "Market");
+                name: "Markets");
 
             migrationBuilder.DropTable(
-                name: "SocialMedia");
+                name: "SocialMedias");
 
             migrationBuilder.DropTable(
-                name: "UserProfile");
+                name: "UserProfiles");
 
             migrationBuilder.DropTable(
-                name: "Review");
+                name: "Reviews");
 
             migrationBuilder.DropTable(
                 name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "User");
+                name: "Users");
         }
     }
 }
