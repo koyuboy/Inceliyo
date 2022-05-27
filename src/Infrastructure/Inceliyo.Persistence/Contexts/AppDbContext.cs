@@ -19,9 +19,20 @@ namespace Inceliyo.Persistence.Contexts
         public string DbPath { get;}
         public AppDbContext()
         {
-            string localDirectory = "C:/Users/HUZEYFE/Desktop/Inceliyo.com";
-            string dbDirectory = "/Inceliyo/src/Infrastructure/Inceliyo.Persistence/DB/InceliyoSQLite.db";
-            DbPath = localDirectory + dbDirectory;
+            string startupPath = Environment.CurrentDirectory;
+            var listStrLineElements = startupPath.Split('\\').ToList();
+            string path = "";
+            foreach (var item in listStrLineElements)
+            {
+                path = path + item + "/";
+                if (item == "src")
+                {
+                    break;
+                }
+            }
+            path = path + "Infrastructure/Inceliyo.Persistence/DB/InceliyoSQLite.db";
+            DbPath = path;
+
         }
 
         public DbSet<Category> Categories { get; set; }
