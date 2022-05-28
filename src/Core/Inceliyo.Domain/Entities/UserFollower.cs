@@ -13,6 +13,6 @@ namespace Inceliyo.Domain.Entities
         public Guid TargetId { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        public virtual User User { get; set; }
+        //public virtual User User { get; set; }
     }
 }

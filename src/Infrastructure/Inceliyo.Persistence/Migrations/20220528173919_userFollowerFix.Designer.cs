@@ -3,14 +3,16 @@ using System;
 using Inceliyo.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Inceliyo.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220528173919_userFollowerFix")]
+    partial class userFollowerFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,8 +81,6 @@ namespace Inceliyo.Persistence.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ActorId");
 
                     b.HasIndex("CommentId");
 
@@ -403,12 +403,6 @@ namespace Inceliyo.Persistence.Migrations
 
             modelBuilder.Entity("Inceliyo.Domain.Entities.CommentAction", b =>
                 {
-                    b.HasOne("Inceliyo.Domain.Entities.User", null)
-                        .WithMany()
-                        .HasForeignKey("ActorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Inceliyo.Domain.Entities.Comment", "Comment")
                         .WithMany("CommentActions")
                         .HasForeignKey("CommentId")

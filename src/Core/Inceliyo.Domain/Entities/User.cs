@@ -21,7 +21,7 @@ namespace Inceliyo.Domain.Entities
         public virtual ICollection<Review> Reviews { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<SavedReview> SavedReviews { get; set; }
-        public virtual ICollection<UserFollower> UserFollowers { get; set; }
+        //public virtual ICollection<UserFollower> UserFollowers { get; set; }
         public virtual UserProfile UserProfile { get; set; }
         
 
