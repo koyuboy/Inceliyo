@@ -9,14 +9,12 @@ using System.Threading.Tasks;
 
 namespace Inceliyo.Persistence.Configurations
 {
-    internal class CategoryConfiguration : IEntityTypeConfiguration<Category>
+    internal class SocialMediaConfiguration : IEntityTypeConfiguration<SocialMedia>
     {
-        public void Configure(EntityTypeBuilder<Category> builder)
+        public void Configure(EntityTypeBuilder<SocialMedia> builder)
         {
-            builder.HasKey(c => c.Id);
-            builder.ToTable("Categories");
-            builder.Property(c => c.Name).IsRequired();
-
+            builder.Property(sm => sm.Name).IsRequired();
+            builder.Property(sm => sm.IconPath).IsRequired();
         }
     }
 }

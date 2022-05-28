@@ -9,14 +9,11 @@ using System.Threading.Tasks;
 
 namespace Inceliyo.Persistence.Configurations
 {
-    internal class CategoryConfiguration : IEntityTypeConfiguration<Category>
+    internal class ReviewMediaConfiguration : IEntityTypeConfiguration<ReviewMedia>
     {
-        public void Configure(EntityTypeBuilder<Category> builder)
+        public void Configure(EntityTypeBuilder<ReviewMedia> builder)
         {
-            builder.HasKey(c => c.Id);
-            builder.ToTable("Categories");
-            builder.Property(c => c.Name).IsRequired();
-
+            builder.Property(rm => rm.Path).IsRequired();
         }
     }
 }

@@ -3,14 +3,16 @@ using System;
 using Inceliyo.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Inceliyo.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220528180409_reviewMediaFix")]
+    partial class reviewMediaFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -118,7 +120,6 @@ namespace Inceliyo.Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Content")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CoverImagePath")
@@ -134,7 +135,6 @@ namespace Inceliyo.Persistence.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("UpdatedAt")
@@ -259,11 +259,9 @@ namespace Inceliyo.Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("IconPath")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -278,7 +276,6 @@ namespace Inceliyo.Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Link")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("SocialMediaId")
@@ -303,11 +300,9 @@ namespace Inceliyo.Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("IsApproved")
@@ -317,18 +312,15 @@ namespace Inceliyo.Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PasswordHash")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("RegisteredAt")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Salt")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
