@@ -27,7 +27,7 @@ namespace ConsoleApp2
             //TestSocialMediaAsync(context, true);
             //TestSocialMediaLinkAsync(context);
             //TestSavedReviewAsync(context);
-            TestUserFollowerAsync(context, true);
+            //TestUserFollowerAsync(context);
 
 
 
