@@ -13,7 +13,7 @@ namespace Inceliyo.Domain.Entities
         public Guid SocialMediaId { get; set; }
         public string Link { get; set; }
 
-        public virtual UserProfile UserProfile { get; set; }
-        public virtual SocialMedia SocialMedia { get; set; }
+        public UserProfile UserProfile { get; set; }
+        public SocialMedia SocialMedia { get; set; }
     }
 }

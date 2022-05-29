@@ -16,6 +16,6 @@ namespace Inceliyo.Domain.Entities
         public String Path { get; set; }
         public DateTime UploadAt { get; set; }
 
-        public virtual Review Review { get; set; }
+        public Review Review { get; set; }
     }
 }

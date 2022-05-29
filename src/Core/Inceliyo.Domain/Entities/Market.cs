@@ -12,6 +12,6 @@ namespace Inceliyo.Domain.Entities
         public String Name { get; set; }
         public String IconPath { get; set; }
 
-        public virtual ICollection<ReviewMarketLink> ReviewMarketLinks { get; set; }
+        public ICollection<ReviewMarketLink> ReviewMarketLinks { get; set; }
     }
 }

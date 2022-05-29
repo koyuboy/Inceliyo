@@ -12,6 +12,6 @@ namespace Inceliyo.Domain.Entities
         public string Name { get; set; }
         public Guid ParentId { get; set; }
 
-        public virtual ICollection<Review> Reviews { get; set; }
+        public ICollection<Review> Reviews { get; set; }
     }
 }

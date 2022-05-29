@@ -18,11 +18,11 @@ namespace Inceliyo.Domain.Entities
         public DateTime RegisteredAt { get; set; }
         public DateTime LastLogin { get; set; }
 
-        public virtual ICollection<Review> Reviews { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; }
-        public virtual ICollection<SavedReview> SavedReviews { get; set; }
+        public ICollection<Review> Reviews { get; set; }
+        public ICollection<Comment> Comments { get; set; }
+        public ICollection<SavedReview> SavedReviews { get; set; }
         //public virtual ICollection<UserFollower> UserFollowers { get; set; }
-        public virtual UserProfile UserProfile { get; set; }
+        public UserProfile UserProfile { get; set; }
         
 
     }

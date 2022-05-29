@@ -13,7 +13,7 @@ namespace Inceliyo.Domain.Entities
         public Guid MarketId { get; set; }
         public String Link { get; set; }
 
-        public virtual Review Review { get; set; }
-        public virtual Market Market { get; set; }
+        public Review Review { get; set; }
+        public Market Market { get; set; }
     }
 }

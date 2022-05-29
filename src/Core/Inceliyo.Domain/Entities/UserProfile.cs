@@ -19,8 +19,8 @@ namespace Inceliyo.Domain.Entities
         public PrivacyState WhoSendMessage { get; set; }
         public PrivacyState WhoSendComment { get; set; }
 
-        public virtual User User { get; set; }
-        public virtual ICollection<SocialMediaLink> SocialMediaLinks { get; set; }
+        public User User { get; set; }
+        public ICollection<SocialMediaLink> SocialMediaLinks { get; set; }
 
 
     }

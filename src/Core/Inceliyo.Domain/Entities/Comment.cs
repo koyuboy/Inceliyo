@@ -15,8 +15,8 @@ namespace Inceliyo.Domain.Entities
         public DateTime CreatedAt { get; set; }
         public bool IsDeleted { get; set; }
 
-        public virtual ICollection<CommentAction> CommentActions { get; set; }
-        public virtual User User { get; set; }
-        public virtual Review Review { get; set; }
+        public ICollection<CommentAction> CommentActions { get; set; }
+        public User User { get; set; }
+        public Review Review { get; set; }
     }
 }

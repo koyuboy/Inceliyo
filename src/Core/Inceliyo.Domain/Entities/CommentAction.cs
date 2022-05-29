@@ -13,6 +13,6 @@ namespace Inceliyo.Domain.Entities
         public bool IsLike { get; set; }
         public Guid ActorId { get; set; }
 
-        public virtual Comment Comment { get; set; }
+        public Comment Comment { get; set; }
     }
 }

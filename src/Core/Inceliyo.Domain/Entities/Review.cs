@@ -19,13 +19,13 @@ namespace Inceliyo.Domain.Entities
         public DateTime UpdatedAt { get; set; }
         public bool IsDeleted { get; set; }
 
-        public virtual ICollection<ReviewAction> ReviewActions { get; set; }
-        public virtual ICollection<ReviewMedia> ReviewMedias { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; }
-        public virtual ICollection<ReviewMarketLink> ReviewMarketLinks { get; set; }
-        public virtual ICollection<SavedReview> SavedReviews { get; set; }
-        public virtual User User { get; set; }
-        public virtual Category Category { get; set; }
+        public ICollection<ReviewAction> ReviewActions { get; set; }
+        public ICollection<ReviewMedia> ReviewMedias { get; set; }
+        public ICollection<Comment> Comments { get; set; }
+        public ICollection<ReviewMarketLink> ReviewMarketLinks { get; set; }
+        public ICollection<SavedReview> SavedReviews { get; set; }
+        public User User { get; set; }
+        public Category Category { get; set; }
 
 
 
