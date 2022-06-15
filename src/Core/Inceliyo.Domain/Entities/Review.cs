@@ -12,7 +12,7 @@ namespace Inceliyo.Domain.Entities
         public Guid UserId { get; set; }
         public Guid CategoryId { get; set; }
         public String Title { get; set; }
-        public String CoverImagePath { get; set; }
+        public String? CoverImagePath { get; set; }
         public String Content { get; set; }
         public bool IsDraft { get; set; }
         public DateTime CreatedAt { get; set; }

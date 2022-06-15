@@ -9,24 +9,24 @@ namespace TestDB
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             AppDbContext context = new AppDbContext();
 
-            TestCategoryAsync(context);
-            TestUserAsync(context);
-            TestUserProfileAsync(context);
-            TestReview(context);
-            TestReviewMediaAsync(context);
-            TestCommentAsync(context);
-            TestCommentActionAsync(context);
-            TestMarketAsync(context);
-            TestReviewMarketLinkAsync(context);
-            TestReviewActionAsync(context);
-            TestSocialMediaAsync(context);
-            TestSocialMediaLinkAsync(context);
-            TestSavedReviewAsync(context);
-            TestUserFollowerAsync(context);
+            await TestCategoryAsync(context);
+            await TestUserAsync(context);
+            await TestUserProfileAsync(context);
+            await TestReview(context);
+            await TestReviewMediaAsync(context);
+            await TestCommentAsync(context);
+            await TestCommentActionAsync(context);
+            await TestMarketAsync(context);
+            await TestReviewMarketLinkAsync(context);
+            await TestReviewActionAsync(context);
+            await TestSocialMediaAsync(context);
+            await TestSocialMediaLinkAsync(context);
+            await TestSavedReviewAsync(context);
+            await TestUserFollowerAsync(context);
 
 
 
@@ -59,6 +59,8 @@ namespace TestDB
                 Console.WriteLine(item.CreatedAt);
                 Console.WriteLine(item.SourceId);
                 Console.WriteLine(item.TargetId);
+
+                Console.WriteLine("=====================================");
             }
         }
         private static async Task TestSavedReviewAsync(AppDbContext context, bool create = false)
@@ -84,6 +86,8 @@ namespace TestDB
                 Console.WriteLine(item.CreatedAt);
                 Console.WriteLine(item.ReviewId);
                 Console.WriteLine(item.UserId);
+
+                Console.WriteLine("=====================================");
             }
         }
         private static async Task TestUserProfileAsync(AppDbContext context, bool create = false)
@@ -113,6 +117,8 @@ namespace TestDB
                 Console.WriteLine(item.NotifiacationStateType);
                 Console.WriteLine(item.WhoSendComment);
                 Console.WriteLine(item.WhoSendMessage);
+
+                Console.WriteLine("=====================================");
             }
         }
         private static async Task TestSocialMediaLinkAsync(AppDbContext context, bool create = false)
@@ -138,6 +144,8 @@ namespace TestDB
                 Console.WriteLine(item.Link);
                 Console.WriteLine(item.SocialMediaId);
                 Console.WriteLine(item.UserProfileId);
+
+                Console.WriteLine("=====================================");
             }
         }
         private static async Task TestSocialMediaAsync(AppDbContext context, bool create = false)
@@ -161,6 +169,8 @@ namespace TestDB
             {
                 Console.WriteLine(item.IconPath);
                 Console.WriteLine(item.Name);
+
+                Console.WriteLine("=====================================");
             }
         }
         private static async Task TestReviewActionAsync(AppDbContext context, bool create = false)
@@ -186,6 +196,8 @@ namespace TestDB
                 Console.WriteLine(item.ActorId);
                 Console.WriteLine(item.IsLike);
                 Console.WriteLine(item.ReviewId);
+
+                Console.WriteLine("=====================================");
             }
         }
         private static async Task TestReviewMarketLinkAsync(AppDbContext context, bool create = false)
@@ -211,6 +223,8 @@ namespace TestDB
                 Console.WriteLine(item.Link);
                 Console.WriteLine(item.MarketId);
                 Console.WriteLine(item.ReviewId);
+
+                Console.WriteLine("=====================================");
             }
         }
         private static async Task TestMarketAsync(AppDbContext context, bool create = false)
@@ -234,6 +248,8 @@ namespace TestDB
             {
                 Console.WriteLine(item.Name);
                 Console.WriteLine(item.IconPath);
+
+                Console.WriteLine("=====================================");
             }
         }
         private static async Task TestCommentActionAsync(AppDbContext context, bool create = false)
@@ -259,6 +275,8 @@ namespace TestDB
                 Console.WriteLine(item.ActorId);
                 Console.WriteLine(item.CommentId);
                 Console.WriteLine(item.IsLike);
+
+                Console.WriteLine("=====================================");
             }
         }
         private static async Task TestCommentAsync(AppDbContext context, bool create = false)
@@ -288,6 +306,8 @@ namespace TestDB
                 Console.WriteLine(item.IsDeleted);
                 Console.WriteLine(item.ReviewId);
                 Console.WriteLine(item.UserId);
+
+                Console.WriteLine("=====================================");
             }
         }
         private static async Task TestReview(AppDbContext context, bool create = false)
@@ -356,6 +376,7 @@ namespace TestDB
                 Console.WriteLine(item.Path);
                 Console.WriteLine(item.ReviewId);
                 Console.WriteLine(item.UploadAt);
+
                 Console.WriteLine("=====================================");
 
             }
@@ -422,6 +443,8 @@ namespace TestDB
                 Console.WriteLine(item.Id);
                 Console.WriteLine(item.Name);
                 Console.WriteLine(item.ParentId);
+
+                Console.WriteLine("=====================================");
             }
         }
     }

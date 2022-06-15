@@ -11,9 +11,9 @@ namespace Inceliyo.Domain.Entities
     public class UserProfile : BaseEntity
     {
         public Guid UserId { get; set; }
-        public String ProfileImagePath { get; set; }
-        public String CoverImagePath { get; set; }
-        public String Bio { get; set; }
+        public String? ProfileImagePath { get; set; }
+        public String? CoverImagePath { get; set; }
+        public String? Bio { get; set; }
         public bool IsEmailNotification { get; set; }
         public NotificationState NotifiacationStateType { get; set; }
         public PrivacyState WhoSendMessage { get; set; }

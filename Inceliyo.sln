@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inceliyo.Persistence", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDB", "test\TestDB\TestDB.csproj", "{936F07BB-5F1D-42ED-8E86-E47888E4E74F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inceliyo.WebAPI", "src\Presentation\Inceliyo.WebAPI\Inceliyo.WebAPI.csproj", "{40ED42D1-82BB-4D70-BA27-7B3EFBB79EBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inceliyo.WebAPI", "src\Presentation\Inceliyo.WebAPI\Inceliyo.WebAPI.csproj", "{40ED42D1-82BB-4D70-BA27-7B3EFBB79EBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
