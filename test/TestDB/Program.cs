@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace TestDB
 {
     internal class Program
     {
@@ -199,7 +199,7 @@ namespace ConsoleApp2
                     Link = "https://www.google.com",
                     MarketId = Guid.Parse("C45E628D-20C7-446A-9DB0-097D9C1EBD91"),
                     ReviewId = Guid.Parse("C16DF633-B3F9-4270-9FF5-B4A9125CEF2D")
-                }); 
+                });
 
                 await context.SaveChangesAsync();
             }

@@ -25,12 +25,12 @@ namespace Inceliyo.Persistence.Contexts
             foreach (var item in listStrLineElements)
             {
                 path = path + item + "/";
-                if (item == "src")
+                if (item == "Inceliyo")
                 {
                     break;
                 }
             }
-            path = path + "Infrastructure/Inceliyo.Persistence/DB/InceliyoSQLite.db";
+            path = path + "src/Infrastructure/Inceliyo.Persistence/DB/InceliyoSQLite.db";
             DbPath = path;
 
         }
