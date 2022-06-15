@@ -31,13 +31,6 @@ namespace Inceliyo.WebAPI
 
             services.AddControllers();
 
-            services.AddDbContext<AppDbContext>(conf =>
-            {
-                services.AddDbContext<AppDbContext>(conf =>
-                {
-                    conf.UseSqlite("Data Source=Inceliyo.db");
-                });
-            });
             
             services.AddSwaggerGen(c =>
             {

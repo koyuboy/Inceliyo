@@ -24,7 +24,7 @@ namespace ConsoleApp2
             //TestMarketAsync(context);
             //TestReviewMarketLinkAsync(context);
             //TestReviewActionAsync(context);
-            //TestSocialMediaAsync(context, true);
+            //TestSocialMediaAsync(context);
             //TestSocialMediaLinkAsync(context);
             //TestSavedReviewAsync(context);
             //TestUserFollowerAsync(context);
@@ -34,7 +34,7 @@ namespace ConsoleApp2
 
             Console.ReadLine();
         }
-
+        //xunit test
 
         private static async Task TestUserFollowerAsync(AppDbContext context, bool create = false)
         {
