@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDB", "test\TestDB\TestD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inceliyo.WebAPI", "src\Presentation\Inceliyo.WebAPI\Inceliyo.WebAPI.csproj", "{40ED42D1-82BB-4D70-BA27-7B3EFBB79EBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGenericRepository", "test\TestGenericRepository\TestGenericRepository.csproj", "{49800AE2-2F2F-4999-A32B-22F7D3EC2F68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{40ED42D1-82BB-4D70-BA27-7B3EFBB79EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40ED42D1-82BB-4D70-BA27-7B3EFBB79EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40ED42D1-82BB-4D70-BA27-7B3EFBB79EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49800AE2-2F2F-4999-A32B-22F7D3EC2F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49800AE2-2F2F-4999-A32B-22F7D3EC2F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49800AE2-2F2F-4999-A32B-22F7D3EC2F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49800AE2-2F2F-4999-A32B-22F7D3EC2F68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{3F14529A-D962-4E2F-A491-DB8C094CA75C} = {0902C334-BE55-4C6F-BA9B-9C289A163F9F}
 		{936F07BB-5F1D-42ED-8E86-E47888E4E74F} = {597449FA-6D6B-4E83-8057-7B6AB2D86D12}
 		{40ED42D1-82BB-4D70-BA27-7B3EFBB79EBF} = {CE571EAA-1817-4195-9B97-E4928D5A9779}
+		{49800AE2-2F2F-4999-A32B-22F7D3EC2F68} = {597449FA-6D6B-4E83-8057-7B6AB2D86D12}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {13E6BC66-2723-413E-936B-8FBEC267F30D}
