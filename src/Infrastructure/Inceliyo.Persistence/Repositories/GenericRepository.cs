@@ -26,15 +26,11 @@ namespace Inceliyo.Persistence.Repositories
         public async Task AddAsync(T entity)
         {
             await _dbSet.AddAsync(entity);
-            
-            await _context.SaveChangesAsync();
         }
 
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
             await _dbSet.AddRangeAsync(entities);
-
-            await _context.SaveChangesAsync();
         }
 
         public async Task<bool> AnyAsync(Expression<Func<T, bool>> expression)
@@ -55,22 +51,16 @@ namespace Inceliyo.Persistence.Repositories
         public void Remove(T entity)
         {
             _dbSet.Remove(entity);
-            
-            _context.SaveChanges();
         }
 
         public void RemoveRange(IEnumerable<T> entities)
         {
             _dbSet.RemoveRange(entities);
-
-            _context.SaveChanges();
         }
 
         public void Update(T entity)
         {
             _dbSet.Update(entity);
-
-            _context.SaveChanges();
         }
 
         public IQueryable<T> Where(Expression<Func<T, bool>> expression)
