@@ -14,9 +14,9 @@ namespace Inceliyo.Infrastructure.Services
     public class GenericService<T> : IGenericService<T> where T : class
     {
         private readonly IGenericRepository<T> _repository;
-        private readonly IUnitOfWorks _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public GenericService(IGenericRepository<T> repository, IUnitOfWorks unitOfWork)
+        public GenericService(IGenericRepository<T> repository, IUnitOfWork unitOfWork)
         {
             _repository = repository;
             _unitOfWork = unitOfWork;

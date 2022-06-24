@@ -12,7 +12,7 @@ namespace TestGenericService
         {
             var _context = new AppDbContext();
             var _gp = new GenericRepository<Category>(_context);
-            var _uow = new UnitOfWorks(_context);
+            var _uow = new UnitOfWork(_context);
             
             GenericService<Category> gs = new GenericService<Category>(_gp, _uow);
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inceliyo.Application.Interfaces.Repositories
 {
-    public interface IUnitOfWorks
+    public interface IUnitOfWork
     {
         Task CommitAsync();
         void Commit();

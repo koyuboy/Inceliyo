@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Inceliyo.Persistence.UnitOfWorks
 {
-    public class UnitOfWorks : IUnitOfWorks
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly AppDbContext _context;
 
-        public UnitOfWorks(AppDbContext context)
+        public UnitOfWork(AppDbContext context)
         {
             _context = context;
         }
