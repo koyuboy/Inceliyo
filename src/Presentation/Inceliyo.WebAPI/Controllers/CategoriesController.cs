@@ -18,11 +18,42 @@ namespace Inceliyo.WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Category>> All()
+        public async Task<IEnumerable<Category>> GetAll()
         {
             var categories = await _categoryService.GetAllAsync();
 
             return categories;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<Category> GetById(Guid id)
+        {
+            var category = await _categoryService.GetByIdAsync(id);
+
+            return category;
+        }
+
+        [HttpPost]
+        public async Task<Category> Add(Category category)
+        {
+            var result = await _categoryService.AddAsync(category);
+
+            return result;
+        }
+
+        [HttpPut]
+        public async Task Update(Category category)
+        {
+            await _categoryService.UpdateAsync(category);
+
+        }
+
+        [HttpDelete("{id}")]
+        public async Task Remove(Guid id)
+        {
+            var category = await _categoryService.GetByIdAsync(id);
+            await _categoryService.RemoveAsync(category);
+
         }
 
     }
