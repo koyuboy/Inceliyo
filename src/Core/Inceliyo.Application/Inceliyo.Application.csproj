@@ -9,8 +9,13 @@
   <ItemGroup>
     <Folder Include="DTOs\Requests\" />
     <Folder Include="DTOs\Responses\" />
+    <Folder Include="Mediator\Commands\" />
     <Folder Include="Validators\" />
-    <Folder Include="Wrappers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,9 +1,13 @@
+using Inceliyo.Application;
 using Inceliyo.Application.Interfaces.Repositories;
 using Inceliyo.Application.Interfaces.Services;
+using Inceliyo.Infrastructure;
 using Inceliyo.Infrastructure.Services;
+using Inceliyo.Persistence;
 using Inceliyo.Persistence.Contexts;
 using Inceliyo.Persistence.Repositories;
 using Inceliyo.Persistence.UnitOfWorks;
+using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,19 +18,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//unit of work service
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-//generic repository & service
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
 
-//repositories & services
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddApplicationRegistration();
+builder.Services.AddPersistenceRegistration();
+builder.Services.AddInfrastructureRegistration();
 
-//DbContext
-builder.Services.AddDbContext<AppDbContext>();
+
+
 
 var app = builder.Build();
 
