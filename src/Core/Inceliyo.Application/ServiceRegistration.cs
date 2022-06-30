@@ -15,7 +15,7 @@ namespace Inceliyo.Application
         {
             var assm = Assembly.GetExecutingAssembly();
 
-            //services.AddAutoMapper(assm);
+            services.AddAutoMapper(assm);
             services.AddMediatR(assm);
         }
     }
