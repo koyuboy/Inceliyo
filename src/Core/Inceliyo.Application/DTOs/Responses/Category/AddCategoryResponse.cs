@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inceliyo.Application.DTOs.Category
+namespace Inceliyo.Application.DTOs.Responses.Category
 {
-    public class CategoryViewDto
+    public class AddCategoryResponse
     {
+        public Guid Id { get; set; }
         public string Name { get; set; }
-        
+        public Guid ParentId { get; set; }
     }
 }

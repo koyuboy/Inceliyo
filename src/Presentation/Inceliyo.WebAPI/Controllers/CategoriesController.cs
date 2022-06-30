@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Inceliyo.Application.Interfaces.Services;
 using Inceliyo.Domain.Entities;
+using MediatR;
+using Inceliyo.Application.Mediator.Commands.CategoryCommands;
+using Inceliyo.Application.Mediator.Queries.CategoryQueries;
 
 namespace Inceliyo.WebAPI.Controllers
 {
@@ -11,34 +14,34 @@ namespace Inceliyo.WebAPI.Controllers
     {
         //private readonly IMapper _mapper;
         private readonly ICategoryService _categoryService;
+        private readonly IMediator _mediator;
 
-        public CategoriesController(ICategoryService categoryService)
+        public CategoriesController(ICategoryService categoryService, IMediator mediator)
         {
             _categoryService = categoryService;
+            _mediator = mediator;
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<Category>> GetAll()
-        {
-            var categories = await _categoryService.GetAllAsync();
 
-            return categories;
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+
+            var query = new GetAllCategoriesQuery();
+            return Ok(await _mediator.Send(query));
         }
 
         [HttpGet("{id}")]
-        public async Task<Category> GetById(Guid id)
+        public async Task<IActionResult> GetById(Guid id)
         {
-            var category = await _categoryService.GetByIdAsync(id);
-
-            return category;
+            var query = new GetCategoryByIdQuery() { Id = id };
+            return Ok(await _mediator.Send(query));
         }
 
         [HttpPost]
-        public async Task<Category> Add(Category category)
+        public async Task<IActionResult> Add(AddCategoryCommand command)
         {
-            var result = await _categoryService.AddAsync(category);
-
-            return result;
+            return Ok(await _mediator.Send(command));
         }
 
         [HttpPut]

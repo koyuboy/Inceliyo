@@ -7,9 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\Requests\" />
-    <Folder Include="DTOs\Responses\" />
-    <Folder Include="Mediator\Commands\" />
+    <Folder Include="DTOs\Requests\Category\" />
     <Folder Include="Validators\" />
   </ItemGroup>
 

@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
-using Inceliyo.Application.DTOs.Category;
+using Inceliyo.Application.DTOs.Requests.Category;
+using Inceliyo.Application.DTOs.Responses.Category;
+using Inceliyo.Application.Mediator.Commands.CategoryCommands;
 using Inceliyo.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,7 +15,10 @@ namespace Inceliyo.Application.MappingProfiles
     {
         public CategoryMapping()
         {
-            CreateMap<Category, CategoryViewDto>().ReverseMap(); ;
+            CreateMap<Category, CategoryNameResponse>().ReverseMap();
+            CreateMap<Category, AddCategoryResponse>().ReverseMap();
+            CreateMap<Category, AddCategoryCommand>().ReverseMap();
+            
         }
     }
 }
